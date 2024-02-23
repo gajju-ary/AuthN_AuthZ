@@ -9,7 +9,7 @@ namespace AuthN_AuthZ.Models
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Password is required")]
-        [DataType(DataType.Password)]
+        [DataType(DataType.Password)]  // For Mix Type Password
         public string Password { get; set; }
     }
 }

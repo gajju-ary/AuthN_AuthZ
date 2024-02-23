@@ -13,11 +13,15 @@ namespace AuthN_AuthZ.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Task()
         {
             return View();
         }
-
+        public IActionResult Dashboard()
+        {
+            ViewBag.usr = "User";
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

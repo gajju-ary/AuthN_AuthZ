@@ -2,11 +2,9 @@
 
 namespace AuthN_AuthZ.Business
 {
-    public class EmployeeService
+    public class EmployeeService: IEmployeeService
     {
-        public IEnumerable<Employee> GetAllEmployees()
-        {
-            var employees = new List<Employee>()
+        List<Employee> _employees = new List<Employee>()
            {
                new Employee() {
                Id =1,
@@ -17,17 +15,20 @@ namespace AuthN_AuthZ.Business
                },
                new Employee() {
                    Id =2,
-               FirstName = "Ankur",
-               LastName = "Sahu",
-               Email = "Ankur@gmail.com",
+               FirstName = "ABC",
+               LastName = "XYZ",
+               Email = "abc@gmail.com",
                Address = "Bhopal"}
            };
 
-            return employees;
+        public List<Employee> GetAllEmployees()
+        {
+            return _employees.ToList();
         }
 
         public void AddEmployee(Employee model)
         {
+           _employees.Add(model); //store in List
            
         }
     }

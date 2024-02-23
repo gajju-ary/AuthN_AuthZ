@@ -13,7 +13,7 @@ namespace AuthN_AuthZ.Controllers
             _employeeService = employeeService;
         }
 
-        public IActionResult Index()
+        public IActionResult AllEmployee()
         {
             var employees = _employeeService.GetAllEmployees();
             return View(employees);
@@ -31,7 +31,7 @@ namespace AuthN_AuthZ.Controllers
         {
             if (ModelState.IsValid)
             {
-               var count = _employeeService.AddEmployee(model);
+                _employeeService.AddEmployee(model);
                 return RedirectToAction("Index");
             }
             return View(model);
@@ -39,7 +39,13 @@ namespace AuthN_AuthZ.Controllers
 
         public IActionResult Dashboard()
         {
+            ViewBag.usr = "HR";
             return View();
         }
+        public IActionResult Task()
+        {
+            return View();
+        }
+
     }
 }

@@ -2,16 +2,18 @@
 <h2>Login</h2>
 
 <form asp-controller="Account" asp-action="Login" method="post">
-    <div>
-        <label asp-for="Email"></label>
-        <input asp-for="Email" />
-        <span asp-validation-for="Email"></span>
+    <div class="row mb-3">
+        <div class="col-6">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" />
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div class="col-6">
+            <label asp-for="Password"></label>
+            <input asp-for="Password" />
+            <span asp-validation-for="Password"></span>
+        </div>
     </div>
-    <div>
-        <label asp-for="Password"></label>
-        <input asp-for="Password" />
-        <span asp-validation-for="Password"></span>
-    </div>
-   
-    <button type="submit">Login</button>
+
+    <button type="submit" class="btn btn-primary">Login</button>
 </form>

@@ -5,6 +5,6 @@ namespace AuthN_AuthZ.Business
     public interface IEmployeeService
     {
         List<Employee> GetAllEmployees();
-        int AddEmployee(Employee model);
+        void AddEmployee(Employee model);
     }
 }
